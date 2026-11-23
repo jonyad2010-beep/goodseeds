@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kit de Cultivo EcoRaíz – GoodSeeds</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#F1E9D8; --surface:#FFFBF2; --ink:#2E1F14; --muted:#6B5646;
+  --green:#2F7A32; --deep:#3B2416; --tomato:#2E8B32; --line:#DCCDB0; --on-deep:#F6EFE0; --moss:#1F5A25; --on-accent:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B130C; --surface:#2A1D13; --ink:#F1E7D3; --muted:#C2AF98;
+    --green:#7BD070; --deep:#26170D; --tomato:#7BD070; --line:#43301F; --on-deep:#F6EFE0; --moss:#16391A; --on-accent:#10230F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B130C; --surface:#2A1D13; --ink:#F1E7D3; --muted:#C2AF98;
+  --green:#7BD070; --deep:#26170D; --tomato:#7BD070; --line:#43301F; --on-deep:#F6EFE0; --moss:#16391A; --on-accent:#10230F;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(28px,5vw,40px);margin-bottom:8px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 28px}
+
+/* Hero */
+.hero{background:radial-gradient(circle at 85% 20%,rgba(95,190,80,.45),transparent 45%),radial-gradient(circle at 5% 100%,rgba(47,122,50,.5),transparent 50%),var(--deep);color:var(--on-deep);padding:72px 0 64px;border-bottom:8px solid var(--green)}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+@media(min-width:800px){.hero .wrap{grid-template-columns:1.2fr 1fr}}
+.hero h1{font-size:clamp(40px,9vw,76px);font-weight:800}
+.hero p{font-size:19px;max-width:44ch;opacity:.92}
+.brand{font-weight:700;margin-bottom:14px;opacity:.85}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn.main{background:var(--tomato);color:var(--on-accent)}
+.btn.alt{border-color:var(--on-deep);color:var(--on-deep)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+
+/* Price tag: the one memorable element */
+.tag{justify-self:center;width:min(300px,80vw);aspect-ratio:1;border-radius:50%;background:var(--bg);color:var(--deep);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  border:10px solid var(--green);position:relative;box-shadow:0 0 0 8px rgba(255,255,255,.12)}
+.tag small{font-weight:700;font-size:15px;color:#566350}
+.tag strong{font-family:Fraunces,serif;font-size:clamp(64px,16vw,92px);line-height:1;color:var(--tomato)}
+.tag span{font-weight:700}
+.tag::before{content:"";position:absolute;top:-34px;left:50%;width:4px;height:34px;background:var(--green);transform:translateX(-50%)}
+
+/* Contenido */
+.grid{display:grid;gap:16px}
+@media(min-width:700px){.grid.c2{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{margin:0;color:var(--muted)}
+.qty{font-family:Fraunces,serif;font-size:34px;font-weight:800;color:var(--green);display:block;line-height:1}
+.facts{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px}
+.facts li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px;flex-wrap:wrap}
+.facts b{min-width:150px}
+
+/* Contacto */
+.contact{background:var(--deep);color:var(--on-deep)}
+.contact .lead{color:var(--on-deep);opacity:.8}
+.clist{display:grid;gap:14px}
+@media(min-width:700px){.clist{grid-template-columns:1fr 1fr}}
+.c{display:block;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:18px 20px;overflow-wrap:anywhere}
+.c span{display:block;font-size:14px;opacity:.75}
+.c b{font-size:19px}
+a.c:hover{background:rgba(255,255,255,.08)}
+.ben{border-top:6px solid var(--green)}
+.ben .ic{font-size:34px;display:block;margin-bottom:8px}
+.story{background:var(--moss);color:var(--on-deep)}
+.story .lead{color:var(--on-deep);opacity:.85}
+.story .grid{margin-top:8px}
+.story .card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)}
+.story .card p{color:var(--on-deep)}
+.story .card h3{color:#F2C879}
+.slogan{font-family:Fraunces,serif;font-size:clamp(26px,5vw,38px);font-weight:800;margin-top:28px;color:#F2C879}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-left:8px solid var(--green);border-radius:14px;padding:18px 20px 18px 76px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:var(--green);color:var(--on-accent);font:800 22px/42px Fraunces,serif;text-align:center}
+.steps b{display:block;font-family:Fraunces,serif;font-size:20px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+summary{font-weight:700;cursor:pointer;font-size:18px}
+details[open]{border-color:var(--green)}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{padding:24px 0;text-align:center;color:var(--muted);font-size:14px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="brand">GoodSeeds · Grow Stronger</div>
+      <h1>Kit de Cultivo EcoRaíz</h1>
+      <p>Tu huerto orgánico en casa: semillas, macetas biodegradables y sustrato, todo listo para sembrar jitomate y cilantro.</p>
+      <div class="btns">
+        <a class="btn main" href="https://wa.me/529617533554" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn alt" href="#contenido">Ver qué incluye</a>
+      </div>
+    </div>
+    <div class="tag" role="img" aria-label="Precio: 100 pesos">
+      <small>Precio</small>
+      <strong>$100</strong>
+      <span>pesos MXN</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="contenido">
+  <div class="wrap">
+    <h2>Qué incluye el kit</h2>
+    <p class="lead">Todo lo necesario para empezar a cultivar, en un empaque de papel Kraft biodegradable.</p>
+    <div class="grid c2">
+      <div class="card"><span class="qty">1</span><h3>Jitomate Bola</h3><p>Sobrecito de semillas (F 792).</p></div>
+      <div class="card"><span class="qty">1</span><h3>Cilantro Liderth Aromático</h3><p>Sobrecito de semillas (F 947 / 14 g).</p></div>
+      <div class="card"><span class="qty">2</span><h3>Macetas de fibra de coco</h3><p>Biodegradables: se pueden plantar directo en la tierra.</p></div>
+      <div class="card"><span class="qty">2</span><h3>Bolsas de sustrato orgánico</h3><p>Sustrato premium de 40 g cada una.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Datos del producto</h2>
+    <ul class="facts">
+      <li><b>Materiales</b><span>Semillas seleccionadas de alta germinación, sustrato orgánico enriquecido, fibra de coco natural y papel Kraft biodegradable.</span></li>
+      <li><b>Lote y código</b><span>GS-KC-001</span></li>
+      <li><b>Origen</b><span>Fabricado en México (Tizayuca, Hgo.)</span></li>
+      <li><b>Garantía</b><span>Si falta algún insumo, el empaque llega dañado o la semilla no germina, lo revisamos y respondemos en un máximo de 48 horas.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="beneficios">
+  <div class="wrap">
+    <h2>¿Por qué elegir EcoRaíz?</h2>
+    <p class="lead">Lo que hace diferente a nuestro kit frente a otros.</p>
+    <div class="grid c2">
+      <div class="card ben"><span class="ic">🌍</span><h3>100% sustentable</h3><p>Sustituimos las macetas de plástico por fibra de coco biodegradable. Tu huella de carbono se reduce al mínimo.</p></div>
+      <div class="card ben"><span class="ic">🌱</span><h3>Resultados rápidos</h3><p>Ideal para principiantes. Verás los primeros brotes en menos de dos semanas.</p></div>
+      <div class="card ben"><span class="ic">📚</span><h3>Valor educativo</h3><p>Perfecto para escuelas y familias. Enseña responsabilidad, paciencia y respeto por la naturaleza.</p></div>
+      <div class="card ben"><span class="ic">🏙️</span><h3>Práctico y compacto</h3><p>Diseñado para espacios reducidos en la ciudad. No requiere jardín.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <div class="wrap">
+    <h2>Nuestra historia</h2>
+    <p class="lead">GoodSeeds nació para reconectar a las personas de la ciudad con la naturaleza.</p>
+    <div class="grid c2">
+      <div class="card"><h3>¿Quiénes somos?</h3><p>Somos GoodSeeds, una microempresa mexicana comprometida con el medio ambiente. Nacimos con la idea de reconectar a las personas de la ciudad con la naturaleza.</p></div>
+      <div class="card"><h3>Nuestra misión</h3><p>Facilitar la adopción de hábitos sustentables mediante kits prácticos que promuevan la educación ambiental.</p></div>
+    </div>
+    <div class="slogan">“Siembra hoy, cosecha mañana.”</div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <h2>¿Cómo funciona?</h2>
+    <p class="lead">Cuatro pasos sencillos, incluso si nunca has sembrado.</p>
+    <ol class="steps">
+      <li><b>Abre tu kit</b>Despliega tu maceta de fibra de coco.</li>
+      <li><b>Prepara la tierra</b>Vierte el sustrato (140 g).</li>
+      <li><b>Siembra</b>Coloca tus semillas (4 g) a la profundidad recomendada.</li>
+      <li><b>Riega y espera</b>Mantén en un lugar con luz, a temperatura ambiente, y riega moderadamente. ¡En 7 a 14 días verás tu planta!</li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <p class="lead">Resuelve tus dudas antes de comprar.</p>
+    <details><summary>¿Necesito comprar algo más?</summary><p>No, el kit incluye todo lo necesario.</p></details>
+    <details><summary>¿Qué pasa si no tengo jardín?</summary><p>EcoRaíz es ideal para interiores, patios pequeños o balcones.</p></details>
+    <details><summary>¿La maceta se rompe con el agua?</summary><p>No. La fibra de coco está tratada para retener la humedad sin deshacerse y, al final, se puede plantar directamente en la tierra.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2>Contáctanos</h2>
+    <p class="lead">Resolvemos dudas de siembra, recibimos pedidos y damos seguimiento después de tu compra.</p>
+    <div class="clist">
+      <a class="c" href="tel:+529617533554"><span>Teléfono / WhatsApp</span><b>+52 961 753 3554</b></a>
+      <a class="c" href="mailto:GOODSEEDECORAIZ117@gmail.com"><span>Correo electrónico</span><b>GOODSEEDECORAIZ117@gmail.com</b></a>
+      <a class="c" href="https://www.instagram.com/GOODS_EED7" target="_blank" rel="noopener"><span>Instagram</span><b>@GOODS_EED7</b></a>
+      <div class="c"><span>Dirección</span><b>Oriente 3 s/n, Zona Industrial, C.P. 43804, Tizayuca, Hidalgo, México</b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© GoodSeeds – Kit de Cultivo EcoRaíz</footer>
+</body>
+</html>
